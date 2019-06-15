@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="8.5dp"
+    android:background="@color/background_material_light"
+    android:paddingStart="17dp"
+    android:paddingEnd="17dp"
+    android:paddingTop="8dp"
+    android:scaleType="centerCrop"
+    android:id="@+id/ll_dynamic_et_head">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center"
+        android:maxLines="1"
+        tools:text="[Title]"
+        android:textColor="#0055A5"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnClose"/>
+
+    <TextView
+        android:id="@+id/lblSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="3"
+        tools:text="[Sub title]"
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/lblAnswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        tools:hint="[Hint]"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblSubtitle">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtAnswer"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/lblAnswer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.example.bottomsheetdialogfragmentapp.RoundedButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:text="SUBMIT"
+            android:padding="9dp"
+            android:layout_weight=".3"
+            app:autoSizeMaxTextSize="12dp"
+            app:autoSizeMinTextSize="10dp"
+            app:autoSizeTextType="uniform"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.02" />
+
+        <TextView
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingBottom="3dp"
+            android:text="CANCEL"
+            android:textColor="#A9A8A8"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_close_gray"
+        app:layout_constraintTop_toTopOf="@id/lblTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/lblTitle"/>
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:0.03"
+        app:layout_constraintTop_toBottomOf="@id/ll_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
